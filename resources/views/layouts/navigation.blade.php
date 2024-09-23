@@ -13,9 +13,19 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @auth
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                        <x-nav-link class="hidden sm:flex " :href="route('inicio')" :active="request()->routeIs('inicio')">
+                            {{ __('Inicio') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos.index')">
+                            {{ __('Cargar Productos') }}
+                        </x-nav-link>
+                        <x-nav-link class="hidden sm:flex " :href="route('nuestros-productos.index')" :active="request()->routeIs('nuestros-productos.index')">
+                            {{ __('Productos') }}
+                        </x-nav-link>
+
+                        <x-nav-link class="hidden sm:flex " :href="route('about-section.index')">
+                            {{ __('Nosotros') }}
+                        </x-nav-link>
                     @endauth
                 </div>
             </div>
@@ -23,18 +33,21 @@
             @guest
                 <!-- Navigation Links -->
                 <div class=" space-x-8 sm:-my-px sm:ms-10 flex">
-                    {{-- <x-nav-link :href="route('productos')" :active="request()->routeIs('productos')">
-                        {{ __('Productos') }}
-                    </x-nav-link> --}}
-                    <x-nav-link class="hidden sm:flex " :href="'#products'">
+                    <x-nav-link class="hidden sm:flex" :href="route('inicio')" :active="request()->routeIs('inicio')">
+                        {{ __('Inicio') }}
+                    </x-nav-link>
+                    <x-nav-link class="hidden sm:flex " :href="route('nuestros-productos.index')" :active="request()->routeIs('nuestros-productos.index')">
                         {{ __('Productos') }}
                     </x-nav-link>
 
-                    <x-nav-link class="hidden sm:flex " :href="'#nosotros'">
+                    <x-nav-link class="hidden sm:flex " :href="route('about-section.index')" :active="request()->routeIs('about-section.index')">
                         {{ __('Nosotros') }}
                     </x-nav-link>
 
-                    
+                    <x-nav-link class="hidden sm:flex " :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
+                        {{ __('Contacto') }}
+                    </x-nav-link>
+
                     <x-nav-link class="hidden sm:flex" :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Iniciar sesion') }}
                     </x-nav-link>
@@ -93,14 +106,23 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link  :href="route('inicio')" :active="request()->routeIs('inicio')">
+                {{ __('Inicio') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link  :href="route('nuestros-productos.index')" :active="request()->routeIs('nuestros-productos.index')">
+                {{ __('Productos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link  :href="route('about-section.index')" :active="request()->routeIs('about-section.index')">
+                {{ __('Nosotros') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link  :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
+                {{ __('Contacto') }}
+            </x-responsive-nav-link>
            @if (Auth::user())
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                <x-responsive-nav-link :href="route('productos.index')" :active="request()->routeIs('productos.index')">
+                    {{ __('Cargar productos') }}
                 </x-responsive-nav-link>
             @else
-                <x-responsive-nav-link  :href="'#products'">
-                    {{ __('Productos') }}
-                </x-responsive-nav-link>
                 <x-responsive-nav-link class="sm:flex" :href="route('login')" :active="request()->routeIs('login')">
                     {{ __('Iniciar sesion') }}
                 </x-responsive-nav-link>
