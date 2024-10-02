@@ -1,3 +1,12 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+a{
+    text-decoration: none;
+}
+</style>
 <div class="container-fluid p-5" style="background: #f3676787;">
     <footer class="">
     <ul class="nav justify-content-center border-bottom border-white pb-3 mb-3">

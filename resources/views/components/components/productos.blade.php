@@ -1,32 +1,33 @@
 <x-app-layout>
-        <head>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        </head>
-
-        <style>
-        a{
-                text-decoration: none;
-        }
-        </style>
         <x-slot name="header">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                     {{ __('Nuestros productos') }}
                 </h2>
         </x-slot>
-        
-        <div class="container row my-5 d-flex w-100 justify-content-around m-auto">
+
+        <div class="container m-auto row">
+                <form class="container d-flex col-11 col-md-5 col-lg-4 pt-3 me-0" role="search">
+                        <input name="buscarpor" class="form-control me-2 " type="search" placeholder="Buscar producto" aria-label="Search" value="{{ $buscarpor }}">
+                        <button class="btn-pink m-0 " type="submit">Buscar</button>
+                </form> 
+        </div>
+        <div class="container row my-2 d-flex w-100 justify-content-between m-auto">
                 @foreach ($productos as $producto)
-                        <div class="container  col-10 col-md-5 col-lg-3 m-lg-3 p-0 mb-4">
+                        <div class="container col-10 col-md-5 col-lg-3 m-lg-3 p-0 mb-4">
                                 <div class="card-products">
                                         <div style="background-image: url('/img/{{$producto->imagen}}'); width:350px; height:300px; background-size: cover"></div>
                                         <div class="card__content">
-                                                <p class="">
-                                                        {{$producto->descripcion}}
-                                                </p>
-                                                <p>
-                                                       $ {{$producto->precio}}
-                                                </p>
-                                                <a class="btn-card" href="https://wa.me/3482331920">Comprar</a>
+                                                <div class="container d-flex flex-column justify-content-around w-100 h-100">
+                                                        <p class="">
+                                                                {{$producto->descripcion}}
+                                                        </p>
+                                                        <p>
+                                                             Precio: ${{$producto->precio}}
+                                                        </p>
+                                                        <div class="container d-flex justify-content-center">
+                                                                <a class="btn-card m-0" href="https://wa.me/3482331920">Comprar</a>
+                                                        </div>
+                                                </div>
                                         </div>
         
                                 </div>

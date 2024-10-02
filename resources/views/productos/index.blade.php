@@ -18,7 +18,13 @@
     <div class="py-12 overflow-x-scroll">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="table-container p-4 overflow sm:rounded-lg">
-                <a class="btn-pink mb-4" href="{{route('productos.create')}}">Crear</a>
+                <div class="d-flex justify-content-between">
+                    <a class="btn-pink m-0" href="{{route('productos.create')}}">Crear</a>
+                    <form class="container d-flex col-11 col-md-5 col-lg-4 me-0" role="search">
+                        <input name="buscarpor" class="form-control me-2 " type="search" placeholder="Buscar producto" aria-label="Search" value="{{ $buscarpor }}">
+                        <button class="btn-pink m-0 " type="submit">Buscar</button>
+                    </form>
+                </div>
 
                 <table class="table mt-4 p-6 bg-white shadow-md overflow-x-scroll">
                     <thead>

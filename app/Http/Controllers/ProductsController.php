@@ -7,8 +7,10 @@ use App\Models\Producto;
 
 class ProductsController extends Controller
 {
-    public function index(){
-        $productos = Producto::paginate(10);
-        return view('components.components.productos', compact('productos'));
+    public function index(Request $request){
+        $buscarpor = $request->get('buscarpor');
+
+        $productos = Producto::where('nombre','like','%'.$buscarpor.'%')->paginate(10);
+        return view('components.components.productos', compact('productos', 'buscarpor'));
     }
 }

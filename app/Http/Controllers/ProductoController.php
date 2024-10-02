@@ -10,10 +10,11 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::paginate(10);
-        return view('productos.index', compact('productos'));
+        $buscarpor = $request->get('buscarpor');
+        $productos = Producto::where('nombre','like','%'.$buscarpor.'%')->paginate(10);
+        return view('productos.index', compact('productos', 'buscarpor'));
     }
 
     /**

@@ -112,12 +112,10 @@ text-shadow: 7px 7px 7px black;
 }
 
 .card-proposal{
-  width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 1.5rem;
   background-color: white;
   border-radius: 10px;
   transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -141,7 +139,6 @@ text-shadow: 7px 7px 7px black;
   position: relative;
   /* width: 300px;
   height: 300px; */
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -157,7 +154,7 @@ text-shadow: 7px 7px 7px black;
 }
 
 .card-products:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -214,7 +211,7 @@ text-shadow: 7px 7px 7px black;
   background-size:cover;
   background-position: center;
 
-  height:350px;
+  /* height:350px; */
 }
 
 .gradient{
@@ -223,8 +220,82 @@ text-shadow: 7px 7px 7px black;
 
 /*-------------  form-contacto  ----------------*/
 
+.form-area{
+  padding: 2rem 0 2rem 0;
+}
 
-@media (min-width: 768px) {
+.row-single-form{
+  box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+.left{
+  background-color: #f3676787;
+  padding: 12.28rem 6rem;
+  border-radius: 10px 0 0 10px;
+}
+
+.left h2{
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.left h2 span{
+  font-weight: 100;
+}
+
+.right{
+  padding: 3rem 3rem;
+  position: relative;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+}
+
+.right i{
+  position: absolute;
+  font-size: 5.5rem;
+  left: -1.7rem;
+  color: #fff;
+}
+
+.form-control{
+  border: solid 1px black;
+}
+
+.right button{
+  border: none;
+  border-right: 0;
+  background-color: #252525;
+  width: 11rem;
+  color: #fff;
+  padding: 1rem 0;
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.right button:hover{
+  background-color: #252525;
+}
+
+/*   mapa   */
+
+#my_map{
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .right i{
+    top: -3.5rem;
+    transform: rotate(90deg);
+    left: 50%;
+  }
+}
+
+
+@media (min-width: 767px) {
     .title-hero{
         margin-bottom: 1rem;
     }
@@ -235,7 +306,28 @@ text-shadow: 7px 7px 7px black;
     .hero{
         border-bottom: solid 1px black;
     }
+}
 
+@media (max-width:768){
+  .left{
+    padding: 5.5rem 1rem;
+    text-align: center;
+  }
+  .left h2{
+    font-size: 1.5rem;
+  }
+  .right{
+    padding: 1.5rem;
+  }
+  .right i {
+    top: -3.5rem;
+    transform: rotate(90deg);
+    left: 45%;
+  }
+  .right button{
+    width: 11rem;
+    padding: 0.8rem 0;
+  }
 }
 
 @media (min-width: 992px) {

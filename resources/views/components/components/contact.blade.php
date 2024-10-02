@@ -1,84 +1,113 @@
 <x-app-layout>
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-      </head>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> 
+  </head>
+<x-slot name="header">
+  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    {{ __('Contactanos') }}
+  </h2>
+</x-slot>
 
-    <style>
-        a{
-            text-decoration: none;
-        }
-    </style>
-
-      <x-slot name="header">
-              <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                  {{ __('Contactanos') }}
-              </h2>
-      </x-slot>
-
-    <div class="container-fluid py-5">
-        <div class="container contacto">
-            <div style="background-color: #ff01014f; border: solid 2px;" class="row m-3 mb-4 p-sm-3 mt-lg-3 pb-5 mb-lg-4 mb-xl-5 rounded-2">
-                <!-- Page title -->
-                <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
-                  <h1 class="p-4 p-md-0 mb-md-4 text-center">Información de contacto</h1>
-                  <div class="contenedor d-none d-lg-flex flex-column justify-content-center">
-                    <p class="txtContacto d-flex"> <img style="width: 22px;margin-right: 15px;" src="/img/icons/phone.svg" alt="">+543482-123456</p>
-                    <p class="txtContacto d-flex"><img style="width: 25px;margin-right: 15px;" src="/img/icons/mail.svg" alt="">dateelgusto@correo.com</p>
-                    <p class="txtContacto d-flex"><img style="width: 18px;margin-right: 15px;" src="/img/icons/location.svg" alt="">Reconquista, Santa Fe, <br>Argentina.</p>
-          
-                  </div>
+<div class="form-area">
+  <div class="container">
+    <div class="row single-form g-0">
+        <div class="col-sm-12 col-lg-7">
+          <div class="left gradient">
+            <h2>
+              <span>Contactanos</span>
+            </h2>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+            <div class="right">
+              <i class="d-none d-md-flex fa fa-caret-left "></i>
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Tu nombre</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text"></div>
                 </div>
-          
-                <!-- Contact form -->
-                <form class="formulario col-md-8" id="form">
-            
-                  <!-- Grupo: Nombre -->
-                  <div class="formulario__grupo field" id="grupo__nombre">
-                    <label for="from_name" class="formulario__label">Nombre</label>
-                    <div class="formulario__grupo-input">
-                      <input type="text" class="formulario__input" name="from_name" id="from_name" placeholder="John Doe" fdprocessedid="1qeoqp">
-                      <i class="formulario__validacion-estado fas fa-times-circle" aria-hidden="true"></i>
-                    </div>
-                    <p class="formulario__input-error">Debe completar con su nombre y apellido.</p>
-                  </div>
-            
-                  <!-- Grupo: Correo Electronico -->
-                  <div class="formulario__grupo field" id="grupo__correo">
-                    <label for="email" class="formulario__label">Correo Electrónico</label>
-                    <div class="formulario__grupo-input">
-                      <input type="text" class="formulario__input" name="email" id="email" placeholder="correo@correo.com" fdprocessedid="klxwdf">
-                      <i class="formulario__validacion-estado fas fa-times-circle" aria-hidden="true"></i>
-                    </div>
-                    <p class="formulario__input-error">Complete el Correo. El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-                  </div>
-            
-                  <!-- Grupo: Teléfono -->
-                  <div class="formulario__grupo field" id="grupo__telefono">
-                    <label for="phone" class="formulario__label">Teléfono</label>
-                    <div class="formulario__grupo-input">
-                      <input type="text" class="formulario__input" name="phone" id="phone" placeholder="4491234567" fdprocessedid="li8ive">
-                      <i class="formulario__validacion-estado fas fa-times-circle" aria-hidden="true"></i>
-                    </div>
-                    <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-                  </div>
-                  
-                  <div class="formulario-grupo field" id="grupo__texto">
-                    <label for="message" class="formulario__label">Escribe tu mensaje</label>
-                    <textarea type="text" class="formulario__texto w-100" name="message" id="message"></textarea>
-                  </div>
-          
-                  <div class="formulario__mensaje" id="formulario__mensaje">
-                    <p><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                  </div>
-            
-                  <div class="formulario__grupo formulario__grupo-btn-enviar">
-                    <input class="formulario__btn" type="submit" id="button" value="Enviar email" fdprocessedid="eac8x8">
-                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-                  </div>
-                </form>
-              </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Dirección de mail</label>
+                  <input type="email" class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="exampleInputPassword1"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+            </div>
         </div>
     </div>
-    @include('components.components.footer')
+  </div>
+</div>
+<div class="container">
+  <div class="container mb-4 m-1 m-auto" style="background-color: #fff">
+    <div class="row p-0">
+      <div class="col-12 col-md-7 p-0" style="height: 350px;">
+        <div id="my_map" style="height:350px;"></div>
+        
+      </div> 
+      <div class="col-12 col-md-5 m-md-auto p-4">
+        <div class="d-flex flex-column">
+          <div class="container">
+            <h5>Nos podes encontrar acá</h5>
+            <div class="mail-svg d-flex ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+              <p class="ms-2">dateelgusto@correo.com</p>
+            </div>
+            <div class="phone-svg d-flex ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+              </svg>
+              <p class="ms-2">3482-221133</p>
+            </div>
+          </div>
+          <div class="container mt-3">
+            <h5>Seguinos en nuestras redes sociales</h5>
+            <div class="rrss d-flex flex-column ">
+              <div class="facebook-svg d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class=" mb-1 bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                <p class="ms-2">Dateelgusto Pasteleria</p>
+              </div>
+              <div class="whatsapp-svg d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class=" mb-1 bi bi-whatsapp" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
+                <p class="ms-2">3482-331225</p>
+              </div>
+              <div class="instagram-svg d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class=" mb-1 bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg>
+                <p class="ms-2">@dateelgustoPasteleria</p>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+<script>
+  let map = L.map('my_map').setView([-29.180377, -59.665266], 15)
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  L.marker([-29.180377, -59.665266]).addTo(map)
+</script>
+
+@include('components.components.footer')
 </x-app-layout>

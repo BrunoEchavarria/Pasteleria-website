@@ -12,7 +12,7 @@
         <div class="col ">
             <div class="card-producto card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/torta-products.jpg');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <a href="{{route('nuestros-productos.index')}}">
+                    <a class="text-white" href="{{route('nuestros-productos.index')}}">
                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold ">Conocé nuestras variedades de tortas!</h3>
                     </a>
                 </div>
@@ -22,7 +22,7 @@
         <div class="col">
             <div class="card-producto card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/mesadulce-products.jpg');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <a href="{{route('nuestros-productos.index')}}">
+                    <a class="text-white" href="{{route('nuestros-productos.index')}}">
                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Conocé nuestra mesa dulce!</h3>
                     </a>
                 </div>
@@ -32,7 +32,7 @@
         <div class="col">
             <div class="card-producto card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/torta2-products.jpg');">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                    <a href="{{route('nuestros-productos.index')}}">
+                    <a class="text-white" href="{{route('nuestros-productos.index')}}">
                         <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Conocé nuestras variedades de tartas!</h3>
                     </a>  
                 </div>
