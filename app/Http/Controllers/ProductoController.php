@@ -43,8 +43,12 @@ class ProductoController extends Controller
              $producto['imagen'] = "$imagenProducto";             
          }
          
-         Producto::create($producto);
-         return redirect()->route('productos.index');
+         if (!Producto::create($producto)) {
+            // Mostrar el error
+            return redirect()->back()->withErrors(['error' => 'No se pudo crear el producto.']);
+        }
+        
+        return redirect()->route('productos.index');
     }
 
     /**

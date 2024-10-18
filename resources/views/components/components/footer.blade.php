@@ -20,7 +20,7 @@ a{
             <a href="{{route('about-section.index')}}" class="px-2 text-body-secondary">Nosotros</a>
         </li>
         <li class="nav-item">
-            <a href="{{route('contactanos.index')}}" class="px-2 text-body-secondary">Contacto</a>
+            <a href="https://wa.me/3482331920" class="px-2 text-body-secondary">Contacto</a>
         </li>
     </ul>
     <p class="text-center text-white">© Date el gusto pastelería</p>

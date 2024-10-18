@@ -1,5 +1,5 @@
 body{
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", system-ui !important; 
   background-color: rgba(255, 192, 203, 0.197);
 }
 .row{
@@ -9,9 +9,7 @@ body{
 /*   index    */
 
 .title-hero{
-  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: .5rem;
 }
 
 .btn-pink{  
@@ -58,22 +56,22 @@ body{
 }
 
 .products-card img{
-background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  background: linear-gradient(-45deg, #eb3d607a 0%, #ef000061 100% );
   margin-top: 0.8rem;
 }
 
 .card-producto{
   background-size: cover;
-  border: solid 1px white;
+  border: solid 1px white;  
 }
 
 .card-producto:hover{
-  transform: scale(1.05);
-  transition: 1.5s;
+  transform: scale(1.02);
+  transition: 1s;
 }
 
 .card-producto a:hover{
-text-shadow: 7px 7px 7px black;
+  text-shadow: 2px 2px 2px black;
   transition: 1.5s;
   color: rgb(255, 155, 155);
 }
@@ -169,7 +167,7 @@ text-shadow: 7px 7px 7px black;
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #ffffff97;
+  background-color: #e135356d;
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
@@ -179,17 +177,14 @@ text-shadow: 7px 7px 7px black;
   opacity: 1;
 }
 
-.card__title {
-  margin: 0;
-  font-size: 24px;
-  color: #333;
-  font-weight: 700;
+.card__price {
+  color: #ffffff;
+  
 }
 
 .card__description {
   margin: 10px 0 0;
-  font-size: 14px;
-  color: #777;
+  color: #ffffff;
   line-height: 1.4;
 }
 
@@ -332,8 +327,7 @@ text-shadow: 7px 7px 7px black;
 
 @media (min-width: 992px) {
     .title-hero{
-        
-        
+           
     }
 
     .text-content a{
@@ -343,6 +337,6 @@ text-shadow: 7px 7px 7px black;
 
 @media (min-width: 1200px) {
     .title-hero{
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }

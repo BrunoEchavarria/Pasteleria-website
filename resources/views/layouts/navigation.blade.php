@@ -44,9 +44,9 @@
                         {{ __('Nosotros') }}
                     </x-nav-link>
 
-                    <x-nav-link class="hidden sm:flex " :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
+                    {{-- <x-nav-link class="hidden sm:flex " :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
                         {{ __('Contacto') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
                     <x-nav-link class="hidden sm:flex" :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Iniciar sesion') }}
@@ -74,7 +74,7 @@
                     
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Perfil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -84,7 +84,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar sesion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -115,9 +115,9 @@
             <x-responsive-nav-link  :href="route('about-section.index')" :active="request()->routeIs('about-section.index')">
                 {{ __('Nosotros') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link  :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
+            {{-- <x-responsive-nav-link  :href="route('contactanos.index')" :active="request()->routeIs('contactanos.index')">
                 {{ __('Contacto') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
            @if (Auth::user())
                 <x-responsive-nav-link :href="route('productos.index')" :active="request()->routeIs('productos.index')">
                     {{ __('Cargar productos') }}
@@ -143,7 +143,7 @@
             <div class="mt-3 space-y-1">
                 @auth
                     <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
+                        {{ __('Perfil') }}
                     </x-responsive-nav-link>
 
                     <!-- Authentication -->
@@ -153,7 +153,7 @@
                         <x-responsive-nav-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Cerrar sesion') }}
                         </x-responsive-nav-link>
                     </form>
                 @endauth

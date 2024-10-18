@@ -8,15 +8,17 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="{{ asset('img/icons/cup-cake.svg')}}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased" style="background-color: rgba(255, 192, 203, 0.197);">
+    <body class="" style="background-color: rgba(255, 192, 203, 0.197);">
         <div class="min-h-screen">
             @include('layouts.navigation')
 

@@ -40,8 +40,8 @@
                 Elegimos los mejores ingredientes para brindarte la mejor experiencia.
             </h2>
             <p>
-                Todo comenzó como una idea y desde entonces nos centramos en brindarte lo mejor para que te sientas a gusto con nuestros
-                productos además brindarte la mejor experiencia para vos y para con quien desees compartir y disfrutar de nuestros riquísimos productos.
+                Desde nuestro bizcochuelo hecho 100% de producción artesanal garantizamos así que en conjunto con los demas ingredientes de primera calidad 
+                como el mejor dulce de leche y los mejores rellenos puedan brindarte esa experiencia inolvidable que te mereces!
             </p>
         </div>
         <div class="img-content col-md-6 col-lg-5"> 

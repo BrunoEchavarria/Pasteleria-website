@@ -18,14 +18,14 @@
                                         <div style="background-image: url('/img/{{$producto->imagen}}'); width:350px; height:300px; background-size: cover"></div>
                                         <div class="card__content">
                                                 <div class="container d-flex flex-column justify-content-around w-100 h-100">
-                                                        <p class="">
+                                                        <p class="card__description">
                                                                 {{$producto->descripcion}}
                                                         </p>
-                                                        <p>
+                                                        <p class="card__price">
                                                              Precio: ${{$producto->precio}}
                                                         </p>
                                                         <div class="container d-flex justify-content-center">
-                                                                <a class="btn-card m-0" href="https://wa.me/3482331920">Comprar</a>
+                                                                <a class="btn-white m-0" href="https://api.whatsapp.com/send?phone=3482331920&text=Hola, me comunico desde la pagina web porque quiero realizar un pedido.">Comprar</a>
                                                         </div>
                                                 </div>
                                         </div>
